@@ -1,0 +1,39 @@
+name: Hephaestus-CI
+
+on: [push]
+
+jobs:
+  debug:
+    name: Build Debug x64
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup MSBuild.exe
+        uses: microsoft/setup-msbuild@v1.0.1
+
+      - name: Display MSBuild version
+        run: msbuild -version
+
+      - name: Build Debug x64
+        run: msbuild /p:Configuration=Debug
+
+
+  release:
+    name: Build Release x64
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup MSBuild.exe
+        uses: microsoft/setup-msbuild@v1.0.1
+
+      - name: Display MSBuild version
+        run: msbuild -version
+
+      - name: Build Release x64
+        run: msbuild /p:Configuration=Release
