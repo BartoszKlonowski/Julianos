@@ -126,6 +126,10 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="View\Screens\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Resources\Images\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
