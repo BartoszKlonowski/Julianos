@@ -10,6 +10,7 @@ namespace DesktopApp
     {
         public MainWindow()
         {
+            DataContext = new ViewModels.LoginViewModel();
             InitializeComponent();
         }
     }

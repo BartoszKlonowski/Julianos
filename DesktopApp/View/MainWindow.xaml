@@ -4,12 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopApp"
+        xmlns:views="clr-namespace:DesktopApp.View.Screens"
+        xmlns:viewmodels="clr-namespace:DesktopApp.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1000"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None"
         ResizeMode="NoResize">
     <Window.Resources>
+        <DataTemplate x:Name="LoginView" DataType="{x:Type viewmodels:LoginViewModel}">
+            <views:LoginView DataContext="{Binding}"/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -34,8 +39,6 @@
                Grid.Row="0"/>
         <TextBlock Text="Hephaestus" Grid.Row="0" Margin="300,50" FontSize="30" HorizontalAlignment="Left" Foreground="White"/>
 
-        <StackPanel Orientation="Horizontal" Margin="20" Grid.Row="1">
-            <ContentControl Content="{Binding}" Margin="10"/>
-        </StackPanel>
+        <ContentControl Content="{Binding}" Margin="10" Grid.Row="1" HorizontalAlignment="Left"/>
     </Grid>
 </Window>
