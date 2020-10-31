@@ -13,5 +13,17 @@ namespace DesktopApp
             DataContext = new ViewModels.LoginViewModel();
             InitializeComponent();
         }
+
+
+        private void MinimizeIconClicked( object sender, RoutedEventArgs e )
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+
+        private void CloseIconClicked( object sender, RoutedEventArgs e )
+        {
+            Close();
+        }
     }
 }
