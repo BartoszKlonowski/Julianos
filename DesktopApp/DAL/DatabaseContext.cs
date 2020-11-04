@@ -17,5 +17,8 @@ namespace DesktopApp.DAL
 
         public DbSet<OrderModel> Orders
         { get; set; }
+
+        public DbSet<UserModel> Users
+        { get; set; }
     }
 }

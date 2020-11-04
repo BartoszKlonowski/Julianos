@@ -29,5 +29,8 @@ namespace DesktopApp.Models
 
         virtual public List<ToolModel> Tools
         { get; set; }
+
+        public int UserID
+        { get; set; }
     }
 }

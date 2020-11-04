@@ -25,5 +25,8 @@ namespace DesktopApp.Models
 
         public DateTime DateOfPurchase
         { get; set; }
+
+        public int UserID
+        { get; set; }
     }
 }
