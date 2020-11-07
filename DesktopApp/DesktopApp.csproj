@@ -89,6 +89,7 @@
     <Compile Include="Models\ServiceModel.cs" />
     <Compile Include="Models\ToolModel.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="ViewModels\Command\Command.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="View\Screens\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
