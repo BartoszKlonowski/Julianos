@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using DesktopApp.ViewModels.Command;
+using System.Windows;
 
 
 namespace DesktopApp
@@ -10,8 +11,10 @@ namespace DesktopApp
     {
         public MainWindow()
         {
-            DataContext = new ViewModels.LoginViewModel();
             InitializeComponent();
+            LoginScreen = new ViewModels.LoginViewModel();
+            CloseButtonCommand = new Command( Close );
+            DataContext = this;
         }
 
 
@@ -21,9 +24,11 @@ namespace DesktopApp
         }
 
 
-        private void CloseIconClicked( object sender, RoutedEventArgs e )
-        {
-            Close();
-        }
+        public ViewModels.LoginViewModel LoginScreen
+        { get; set; }
+
+
+        public Command CloseButtonCommand
+        { get; set; }
     }
 }

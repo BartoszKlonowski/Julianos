@@ -13,7 +13,7 @@
         ResizeMode="NoResize">
     <Window.Resources>
         <DataTemplate x:Name="LoginView" DataType="{x:Type viewmodels:LoginViewModel}">
-            <views:LoginView DataContext="{Binding}"/>
+            <views:LoginView/>
         </DataTemplate>
     </Window.Resources>
     <Grid>
@@ -52,7 +52,7 @@
                     <Image Source="/View/Resources/Images/MinimizeIcon.png"/>
                 </Button>
 
-                <Button Background="Transparent" Margin="20,0,0,100" BorderThickness="0" Click="CloseIconClicked">
+                <Button Background="Transparent" Margin="20,0,0,100" BorderThickness="0" Command="{Binding CloseButtonCommand}">
                     <Image Source="/View/Resources/Images/CloseIcon.png"/>
                 </Button>
             </StackPanel>
@@ -60,6 +60,6 @@
 
 
         <!-- Main app content -->
-        <ContentControl Content="{Binding}" Margin="10" Grid.Row="1" HorizontalAlignment="Left"/>
+        <ContentControl Content="{Binding LoginScreen}" Margin="10" Grid.Row="1" HorizontalAlignment="Left"/>
     </Grid>
 </Window>
