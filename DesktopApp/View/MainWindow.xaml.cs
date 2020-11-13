@@ -12,9 +12,10 @@ namespace DesktopApp
         public MainWindow()
         {
             InitializeComponent();
-            LoginScreen = new ViewModels.LoginViewModel();
-            CloseButtonCommand = new Command( Close );
             DataContext = this;
+
+            DesktopApp.View.Screens.LoginWindow loginWindow = new View.Screens.LoginWindow();
+            loginWindow.ShowDialog();
         }
 
 
