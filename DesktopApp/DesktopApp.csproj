@@ -91,9 +91,7 @@
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="ViewModels\Command\Command.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="View\Screens\LoginView.xaml.cs">
-      <DependentUpon>LoginView.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="View\Resources\Utilities\PasswordBoxAssistant.cs" />
     <Compile Include="View\Screens\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -112,10 +110,6 @@
     <Page Include="View\Resources\Styles\ButtonStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Screens\LoginView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Screens\LoginWindow.xaml">
       <SubType>Designer</SubType>

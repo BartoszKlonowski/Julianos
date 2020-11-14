@@ -11,11 +11,6 @@
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None"
         ResizeMode="NoResize">
-    <Window.Resources>
-        <DataTemplate x:Name="LoginView" DataType="{x:Type viewmodels:LoginViewModel}">
-            <views:LoginView/>
-        </DataTemplate>
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -26,7 +21,7 @@
         <Border CornerRadius="50" Grid.RowSpan="3">
             <Border.Background>
                 <LinearGradientBrush>
-                    <GradientStop Color="DarkSlateGray" Offset="0.3"/>
+                    <GradientStop Color="Gray" Offset="0.3"/>
                     <GradientStop Color="LightSlateGray" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
@@ -60,6 +55,5 @@
 
 
         <!-- Main app content -->
-        <ContentControl Content="{Binding LoginScreen}" Margin="10" Grid.Row="1" HorizontalAlignment="Left"/>
     </Grid>
 </Window>

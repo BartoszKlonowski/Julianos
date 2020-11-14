@@ -4,35 +4,90 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopApp.View.Screens"
+        xmlns:utilities="clr-namespace:DesktopApp.View.Resources.Utilities"
         mc:Ignorable="d"
         Title="LoginWindow" Height="500" Width="250"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="7*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
         <Border CornerRadius="10" Grid.RowSpan="3">
             <Border.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="Gray" Offset="0.3"/>
-                    <GradientStop Color="LightGray" Offset="1"/>
+                    <GradientStop Color="LightSlateGray" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
+
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="2" Background="Transparent" Margin="20,0,0,100" BorderThickness="0" Command="{Binding CloseButtonCommand}">
+            <TextBlock Grid.Column="0"
+                       FontSize="30" FontFamily="Impact"
+                       Foreground="White"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="Hephaestus"/>
+            <Button Grid.Column="1"
+                    Background="Transparent"
+                    Width="15" Height="15"
+                    BorderThickness="0"
+                    Command="{Binding CloseButtonCommand}">
                 <Image Source="/View/Resources/Images/CloseIcon.png"/>
             </Button>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Login -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
+                <TextBox Background="Transparent" Foreground="White"
+                         BorderThickness="0,0,0,1"
+                         FontWeight="Light" FontSize="30"
+                         Width="150"
+                         TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"
+                         Text="{Binding LoginText, Mode=TwoWay}"/>
+                <Image Source="/View/Resources/Images/LoginIcon.png"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Width="40" Height="40" Margin="10"/>
+            </StackPanel>
+
+            <!-- Password -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+                <PasswordBox FontWeight="Light"
+                             Background="Transparent" Foreground="White"
+                             BorderThickness="0,0,0,1"
+                             Width="150"
+                             FontSize="30"
+                             HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"
+                             Name="NetworkPassword"
+                             utilities:PasswordBoxAssistant.BindPassword="true"
+                             utilities:PasswordBoxAssistant.BoundPassword="{Binding Path=PasswordText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Image Source="/View/Resources/Images/PasswordIcon.png"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Width="40" Height="40" Margin="10"/>
+            </StackPanel>
+
+            <!-- Login and register actions -->
+            <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center" Grid.Row="2">
+                <Button Template="{StaticResource ModernButton}" Content="Login" Command="{Binding LoginCommand}"/>
+                <Button Template="{StaticResource ModernButton}" Content="Register" Command="{Binding RegisterCommand}"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

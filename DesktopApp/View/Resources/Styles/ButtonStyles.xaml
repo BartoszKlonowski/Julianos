@@ -12,7 +12,8 @@
                 Margin="10,0,10,0"
                 Background="Transparent"
                 Foreground="White"
-                BorderThickness="0"/>
+                BorderThickness="0"
+                Command="{TemplateBinding Command}"/>
     </ControlTemplate>
 
 </ResourceDictionary>
