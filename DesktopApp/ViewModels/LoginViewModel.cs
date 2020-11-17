@@ -42,13 +42,15 @@ namespace DesktopApp.ViewModels
         private void Login()
         {
             DatabaseContext dbContext = new DatabaseContext();
-            if( dbContext.Users.Any( user => user.Login == loginText && user.Password == passwordText ) )
+            var user = dbContext.Users.Where( user => user.Login == loginText && user.Password == passwordText ).FirstOrDefault();
+            if( user is null )
             {
+                MessageBox.Show( "No such user exists - please check your credentials" );
                 ClearCredentialTextBoxes();
             }
             else
             {
-                MessageBox.Show( "No such user exists - please check your credentials" );
+                InitUserSessionDataWithLoggedInUser( user );
                 ClearCredentialTextBoxes();
             }
         }
@@ -78,6 +80,15 @@ namespace DesktopApp.ViewModels
         {
             LoginText = "";
             PasswordText = "";
+        }
+
+
+        private void InitUserSessionDataWithLoggedInUser( Models.UserModel loggedInUser )
+        {
+            var userSession = Models.UserSession.Instance;
+            userSession.ID = loggedInUser.ID;
+            userSession.Login = loggedInUser.Login;
+            userSession.Password = loggedInUser.Password;
         }
 
 
