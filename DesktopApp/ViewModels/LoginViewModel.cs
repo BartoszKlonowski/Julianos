@@ -52,6 +52,7 @@ namespace DesktopApp.ViewModels
             {
                 InitUserSessionDataWithLoggedInUser( user );
                 ClearCredentialTextBoxes();
+                DialogResult = true;
             }
         }
 
@@ -122,10 +123,22 @@ namespace DesktopApp.ViewModels
         { get; }
 
 
+        public bool? DialogResult
+        {
+            get => dialogResult;
+            set
+            {
+                dialogResult = value;
+                OnPropertyChanged();
+            }
+        }
+
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged( [CallerMemberName] string name = null ) => PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( name ) );
 
+        private bool? dialogResult;
 
         private string loginText;
         private string passwordText;

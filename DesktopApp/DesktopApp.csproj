@@ -93,6 +93,7 @@
     <Compile Include="ViewModels\Command\Command.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="View\Resources\Utilities\PasswordBoxAssistant.cs" />
+    <Compile Include="View\Resources\Utilities\WindowDialogCloser.cs" />
     <Compile Include="View\Screens\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>

@@ -10,7 +10,8 @@
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        utilities:WindowDialogCloser.DialogResult="{Binding DialogResult}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
