@@ -14,20 +14,20 @@ namespace DesktopApp
             InitializeComponent();
             DataContext = this;
 
+            MinimizeButtonCommand = new Command( () => WindowState = WindowState.Minimized );
+            CloseButtonCommand = new Command( () => Close() );
+
             DesktopApp.View.Screens.LoginWindow loginWindow = new View.Screens.LoginWindow();
             loginWindow.ShowDialog();
-        }
-
-
-        private void MinimizeIconClicked( object sender, RoutedEventArgs e )
-        {
-            WindowState = WindowState.Minimized;
         }
 
 
         public ViewModels.LoginViewModel LoginScreen
         { get; set; }
 
+
+        public Command MinimizeButtonCommand
+        { get; set; }
 
         public Command CloseButtonCommand
         { get; set; }
