@@ -30,7 +30,7 @@
 
 
         <!-- Header: contains main icon, logo and window state actions -->
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" MouseDown="HeaderMouseDownEventHandler">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="5*"/>
