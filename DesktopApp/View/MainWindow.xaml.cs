@@ -14,14 +14,11 @@ namespace DesktopApp
             InitializeComponent();
             DataContext = this;
 
+            MinimizeButtonCommand = new Command( () => WindowState = WindowState.Minimized );
+            CloseButtonCommand = new Command( () => Close() );
+
             DesktopApp.View.Screens.LoginWindow loginWindow = new View.Screens.LoginWindow();
             loginWindow.ShowDialog();
-        }
-
-
-        private void MinimizeIconClicked( object sender, RoutedEventArgs e )
-        {
-            WindowState = WindowState.Minimized;
         }
 
 
@@ -29,7 +26,16 @@ namespace DesktopApp
         { get; set; }
 
 
+        public Command MinimizeButtonCommand
+        { get; set; }
+
         public Command CloseButtonCommand
         { get; set; }
+
+        private void HeaderMouseDownEventHandler(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if( e.ChangedButton == System.Windows.Input.MouseButton.Left )
+                this.DragMove();
+        }
     }
 }
