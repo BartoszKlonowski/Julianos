@@ -29,14 +29,13 @@ namespace DesktopApp.View.Resources.Utilities
 
         private static void ContentChangedAnimationPropertyChangedCallback( DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs )
         {
-            if( !(dependencyObject is ContentControl contentControl) )
+            if( dependencyObject is ContentControl contentControl )
+            {
+                var propertyDescriptor = DependencyPropertyDescriptor.FromProperty( ContentControl.ContentProperty, typeof( ContentControl ) );
+                propertyDescriptor.AddValueChanged( contentControl, ContentChangedHandler );
+            }
+            else
                 throw new Exception( "Can only be applied to a ContentControl" );
-
-            var propertyDescriptor = DependencyPropertyDescriptor.FromProperty( ContentControl.ContentProperty,
-                typeof( ContentControl ) );
-
-            propertyDescriptor.RemoveValueChanged( contentControl, ContentChangedHandler );
-            propertyDescriptor.AddValueChanged( contentControl, ContentChangedHandler );
         }
 
 
