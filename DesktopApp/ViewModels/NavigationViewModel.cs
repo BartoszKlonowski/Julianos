@@ -9,8 +9,8 @@ namespace DesktopApp.ViewModels
     {
         public NavigationViewModel()
         {
-            View1 = new Command.Command(SetView1);
-            View2 = new Command.Command(SetView2);
+            View1 = new Command.Command( SetView1 );
+            View2 = new Command.Command( SetView2 );
         }
 
 
@@ -42,7 +42,7 @@ namespace DesktopApp.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged([CallerMemberName] string name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        protected void OnPropertyChanged( [CallerMemberName] string name = null ) => PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( name ) );
 
         private UserControl appContent;
     }
