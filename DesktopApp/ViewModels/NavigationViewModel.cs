@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Controls;
 
 
 namespace DesktopApp.ViewModels
@@ -22,7 +23,7 @@ namespace DesktopApp.ViewModels
         {
         }
 
-        public object AppContent
+        public UserControl AppContent
         {
             get => appContent;
             set
@@ -43,6 +44,6 @@ namespace DesktopApp.ViewModels
 
         protected void OnPropertyChanged([CallerMemberName] string name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
-        private object appContent;
+        private UserControl appContent;
     }
 }
