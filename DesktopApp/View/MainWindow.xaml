@@ -13,12 +13,6 @@
         WindowStyle="None"
         ResizeMode="CanResizeWithGrip"
         IsManipulationEnabled="True">
-    <Window.Resources>
-        <DataTemplate x:Key="AppContent" DataType="{x:Type screens:AppContent}">
-            <screens:AppContent />
-        </DataTemplate>
-    </Window.Resources>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
@@ -78,11 +72,11 @@
                 <ColumnDefinition Width="9*"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Navigation panel -->
             <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center">
-                <Button Content="View1" Margin="0,20,0,20" Command="{Binding Navigation.View1}"/>
-                <Button Content="View2" Margin="0,20,0,20" Command="{Binding Navigation.View2}"/>
             </StackPanel>
 
+            <!-- Navigation content control -->
             <ContentControl Grid.Column="1" Content="{Binding Navigation.AppContent}">
                 <utilities:ContentControlExtensions.ContentChangedAnimation>
                     <Storyboard>
