@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:DesktopApp"
         xmlns:screens="clr-namespace:DesktopApp.View.Screens"
         xmlns:viewmodels="clr-namespace:DesktopApp.ViewModels"
+        xmlns:utilities="clr-namespace:DesktopApp.View.Resources.Utilities"
         mc:Ignorable="d"
         Height="700" Width="1000"
         AllowsTransparency="True" Background="Transparent"
@@ -83,6 +84,11 @@
             </StackPanel>
 
             <ContentControl Grid.Column="1" Content="{Binding Navigation.AppContent}">
+                <utilities:ContentControlExtensions.ContentChangedAnimation>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.3"/>
+                    </Storyboard>
+                </utilities:ContentControlExtensions.ContentChangedAnimation>
             </ContentControl>
         </Grid>
     </Grid>
