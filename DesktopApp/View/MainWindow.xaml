@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopApp"
-        xmlns:views="clr-namespace:DesktopApp.View.Screens"
+        xmlns:screens="clr-namespace:DesktopApp.View.Screens"
         xmlns:viewmodels="clr-namespace:DesktopApp.ViewModels"
         mc:Ignorable="d"
         Height="700" Width="1000"
@@ -12,6 +12,12 @@
         WindowStyle="None"
         ResizeMode="CanResizeWithGrip"
         IsManipulationEnabled="True">
+    <Window.Resources>
+        <DataTemplate x:Key="AppContent" DataType="{x:Type screens:AppContent}">
+            <screens:AppContent />
+        </DataTemplate>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
@@ -66,6 +72,18 @@
 
         <!-- Main app content -->
         <Grid Grid.Row="1" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="9*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center">
+                <Button Content="View1" Margin="0,20,0,20" Command="{Binding Navigation.View1}"/>
+                <Button Content="View2" Margin="0,20,0,20" Command="{Binding Navigation.View2}"/>
+            </StackPanel>
+
+            <ContentControl Grid.Column="1" Content="{Binding Navigation.AppContent}">
+            </ContentControl>
         </Grid>
     </Grid>
 </Window>
