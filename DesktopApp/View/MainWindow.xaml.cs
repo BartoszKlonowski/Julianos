@@ -37,5 +37,7 @@ namespace DesktopApp
             if( e.ChangedButton == System.Windows.Input.MouseButton.Left )
                 this.DragMove();
         }
+
+        public ViewModels.NavigationViewModel Navigation { get; } = new ViewModels.NavigationViewModel();
     }
 }
