@@ -9,8 +9,12 @@ namespace DesktopApp.ViewModels
     {
         public NavigationViewModel()
         {
+            ToolsViewCommand = new Command.Command( SwitchToToolsView );
         }
 
+        private void SwitchToToolsView()
+        {
+        }
 
         public UserControl AppContent
         {
@@ -22,6 +26,9 @@ namespace DesktopApp.ViewModels
             }
         }
 
+
+        public ViewModels.Command.Command ToolsViewCommand
+        { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

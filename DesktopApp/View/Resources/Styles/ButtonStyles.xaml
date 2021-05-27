@@ -8,7 +8,7 @@
                 FontSize="20"
                 FontFamily="Impact"
                 Height="40"
-                Width="100"
+                Width="Auto"
                 Margin="10,0,10,0"
                 Background="Transparent"
                 Foreground="White"

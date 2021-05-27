@@ -71,6 +71,7 @@
 
             <!-- Navigation panel -->
             <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center">
+                <Button Template="{StaticResource ModernButton}" Content="Tools" Command="{Binding Navigation.ToolsViewCommand}"/>
             </StackPanel>
 
             <!-- Navigation content control -->
