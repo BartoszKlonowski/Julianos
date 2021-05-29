@@ -21,7 +21,7 @@ jobs:
         run: msbuild -version
 
       - name: Restore all the packages
-        run: nuget restore Hephaestus.sln
+        run: nuget restore Julianos.sln
 
       - name: Build Debug x64
         run: msbuild /p:Configuration=Debug
@@ -45,7 +45,7 @@ jobs:
         run: msbuild -version
 
       - name: Restore all the packages
-        run: nuget restore Hephaestus.sln
+        run: nuget restore Julianos.sln
 
       - name: Build Release x64
         run: msbuild /p:Configuration=Release
