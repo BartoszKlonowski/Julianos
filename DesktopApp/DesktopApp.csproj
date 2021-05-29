@@ -159,7 +159,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="View\Resources\Images\HeaderBackground.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Resources\Images\LoginIcon.png" />
     <Resource Include="View\Resources\Images\Logo.png" />
@@ -172,6 +174,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Resources\Images\MinimizeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Resources\Images\HeaderIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
