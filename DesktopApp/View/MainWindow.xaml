@@ -72,6 +72,7 @@
             <!-- Navigation panel -->
             <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Stretch">
                 <Image Source="/View/Resources/Images/HeaderBackground.png" Height="Auto" Width="Auto"/>
+                <Button Background="Wheat" Content="Books" Command="{Binding Navigation.SwitchToBooksScreenCommand}" />
             </StackPanel>
 
             <!-- Navigation content control -->
