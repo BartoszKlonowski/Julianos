@@ -93,6 +93,9 @@
     <Compile Include="View\Resources\Utilities\ContentControlExtensions.cs" />
     <Compile Include="View\Resources\Utilities\PasswordBoxAssistant.cs" />
     <Compile Include="View\Resources\Utilities\WindowDialogCloser.cs" />
+    <Compile Include="View\Screens\BooksScreen.xaml.cs">
+      <DependentUpon>BooksScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Screens\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -109,6 +112,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\Resources\Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Screens\BooksScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
