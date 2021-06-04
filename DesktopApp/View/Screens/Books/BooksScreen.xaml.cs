@@ -23,8 +23,11 @@ namespace DesktopApp.View.Screens
         public BooksScreen()
         {
             InitializeComponent();
+<<<<<<< HEAD
             DAL.DatabaseContext dbContext = new DAL.DatabaseContext();
             FilteredListView.ItemsSource = dbContext.Books.ToList();
+=======
+>>>>>>> e41ba64... Move BooksScreen to Books subdirectory
         }
     }
 }
