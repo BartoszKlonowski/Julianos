@@ -6,17 +6,8 @@ namespace DesktopApp.DAL
 {
     public class DatabaseContext : DbContext
     {
-        public DatabaseContext() : base( "HephaestusDatabase" )
+        public DatabaseContext() : base( "JulianosDatabase" )
         {}
-
-        public DbSet<ToolModel> Tools
-        { get; set; }
-
-        public DbSet<ServiceModel> Services
-        { get; set; }
-
-        public DbSet<OrderModel> Orders
-        { get; set; }
 
         public DbSet<UserModel> Users
         { get; set; }
