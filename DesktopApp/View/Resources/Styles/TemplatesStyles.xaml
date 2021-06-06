@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:DesktopApp.View.Resources.Styles">
+                    xmlns:local="clr-namespace:DesktopApp.View.Resources.Styles"
+                    xmlns:models="clr-namespace:DesktopApp.Models">
 
     <!-- Modern button used as default for the whole application -->
     <ControlTemplate x:Key="ModernButton" TargetType="Button">
@@ -15,5 +16,11 @@
                 BorderThickness="0"
                 Command="{TemplateBinding Command}"/>
     </ControlTemplate>
+
+    <DataTemplate x:Key="BooksListViewTemplate" DataType="models:Book">
+        <Grid>
+            <TextBlock Text="{Binding Name}" Margin="5"/>
+        </Grid>
+    </DataTemplate>
 
 </ResourceDictionary>
