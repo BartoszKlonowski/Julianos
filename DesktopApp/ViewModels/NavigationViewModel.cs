@@ -9,6 +9,7 @@ namespace DesktopApp.ViewModels
     {
         public NavigationViewModel()
         {
+            SwitchToBooksScreenCommand = new Command.Command( () => AppContent = new View.Screens.BooksScreen() );
         }
 
 
@@ -21,6 +22,10 @@ namespace DesktopApp.ViewModels
                 OnPropertyChanged();
             }
         }
+
+
+        public Command.Command SwitchToBooksScreenCommand
+        { get; }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

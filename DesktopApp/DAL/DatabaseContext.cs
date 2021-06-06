@@ -11,5 +11,8 @@ namespace DesktopApp.DAL
 
         public DbSet<UserModel> Users
         { get; set; }
+
+        public DbSet<BookModel> Books
+        { get; set; }
     }
 }
