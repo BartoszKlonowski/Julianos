@@ -85,6 +85,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DAL\DatabaseContext.cs" />
+    <Compile Include="Models\BookModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\UserSession\UserSession.cs" />
     <Compile Include="ViewModels\Command\Command.cs" />
