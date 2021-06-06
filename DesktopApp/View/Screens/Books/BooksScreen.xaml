@@ -6,6 +6,31 @@
              xmlns:local="clr-namespace:DesktopApp.View.Screens"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <ListView Margin="10" Grid.Column="0" Grid.Row="0"
+            Background="Transparent"
+            Foreground="Wheat"
+            x:Name="FilteredListView"
+            ItemTemplate="{StaticResource BooksListViewTemplate}"
+            SelectionMode="Single"
+            MinHeight="100"
+            VerticalAlignment="Stretch"
+            BorderThickness="1"
+        />
+
+        <Button Grid.Column="0" Grid.Row="1" Margin="10" Height="30" Content="Add new" Background="Wheat" Command="{Binding MinimizeButtonCommand}" />
+
+        <ContentControl Grid.Column="1">
+        </ContentControl>
     </Grid>
 </UserControl>

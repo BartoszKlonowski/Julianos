@@ -23,6 +23,8 @@ namespace DesktopApp.View.Screens
         public BooksScreen()
         {
             InitializeComponent();
+            DAL.DatabaseContext dbContext = new DAL.DatabaseContext();
+            FilteredListView.ItemsSource = dbContext.Books.ToList();
         }
     }
 }
