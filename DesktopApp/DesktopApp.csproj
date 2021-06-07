@@ -88,6 +88,7 @@
     <Compile Include="Models\BookModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\UserSession\UserSession.cs" />
+    <Compile Include="ViewModels\BooksScreenViewModel.cs" />
     <Compile Include="ViewModels\Command\Command.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />

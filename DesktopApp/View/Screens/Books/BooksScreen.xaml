@@ -20,12 +20,13 @@
         <ListView Margin="10" Grid.Column="0" Grid.Row="0"
             Background="Transparent"
             Foreground="Wheat"
-            x:Name="FilteredListView"
+            ItemsSource="{Binding BooksList}"
             ItemTemplate="{StaticResource BooksListViewTemplate}"
             SelectionMode="Single"
             MinHeight="100"
             VerticalAlignment="Stretch"
             BorderThickness="1"
+            SelectedIndex="{Binding SelectedBookIndex}"
         />
 
         <Button Grid.Column="0" Grid.Row="1" Margin="10" Height="30" Content="Add new" Background="Wheat" Command="{Binding MinimizeButtonCommand}" />
