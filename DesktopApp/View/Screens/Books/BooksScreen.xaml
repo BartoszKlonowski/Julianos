@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DesktopApp.View.Screens"
+             xmlns:utilities="clr-namespace:DesktopApp.View.Resources.Utilities"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -20,17 +21,23 @@
         <ListView Margin="10" Grid.Column="0" Grid.Row="0"
             Background="Transparent"
             Foreground="Wheat"
-            x:Name="FilteredListView"
+            ItemsSource="{Binding BooksList}"
             ItemTemplate="{StaticResource BooksListViewTemplate}"
             SelectionMode="Single"
             MinHeight="100"
             VerticalAlignment="Stretch"
             BorderThickness="1"
+            SelectedIndex="{Binding SelectedBookIndex}"
         />
 
         <Button Grid.Column="0" Grid.Row="1" Margin="10" Height="30" Content="Add new" Background="Wheat" Command="{Binding MinimizeButtonCommand}" />
 
-        <ContentControl Grid.Column="1">
+        <ContentControl Grid.Column="1" Content="{Binding BooksPanel}">
+            <utilities:ContentControlExtensions.ContentChangedAnimation>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:1"/>
+                </Storyboard>
+            </utilities:ContentControlExtensions.ContentChangedAnimation>
         </ContentControl>
     </Grid>
 </UserControl>
