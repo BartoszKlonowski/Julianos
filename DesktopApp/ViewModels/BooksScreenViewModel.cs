@@ -33,6 +33,7 @@ namespace DesktopApp.ViewModels
             set
             {
                 selectedBookIndex = value;
+                BooksPanel = new View.Screens.Books.BookDetailsPanel( BooksList[value] );
                 OnPropertyChanged();
             }
         }

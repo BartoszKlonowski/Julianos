@@ -8,9 +8,9 @@ namespace DesktopApp.ViewModels
 {
     public class BookDetailsPanelViewModel : INotifyPropertyChanged
     {
-        public BookDetailsPanelViewModel( int selectedBookID )
+        public BookDetailsPanelViewModel( Models.BookModel selectedBookToDisplay )
         {
-            selectedBook = new DAL.DatabaseContext().Books.First( book => book.ID == selectedBookID );
+            selectedBook = selectedBookToDisplay;
         }
 
 
