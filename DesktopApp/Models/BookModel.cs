@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Windows.Media;
 
 namespace DesktopApp.Models
 {
@@ -28,5 +28,26 @@ namespace DesktopApp.Models
 
         public DateTime BuyingDate
         { get; set; }
+
+        [System.ComponentModel.DataAnnotations.Schema.NotMapped]
+        public Brush RatingColor
+        {
+            get
+            {
+                switch( Rating )
+                {
+                    case 1:
+                    case 2:
+                        return new SolidColorBrush( Colors.Brown );
+                    case 3:
+                    case 4:
+                        return new SolidColorBrush( Colors.Silver );
+                    case 5:
+                        return new SolidColorBrush( Colors.Gold );
+                    default:
+                        return new SolidColorBrush( Colors.White );
+                }
+            }
+        }
     }
 }
