@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Linq;
-
+using System.Windows.Media;
 
 namespace DesktopApp.ViewModels
 {
@@ -50,13 +50,18 @@ namespace DesktopApp.ViewModels
             }
         }
 
-        public decimal BookRating
+        public string BookRating
         {
-            get => selectedBook.Rating;
+            get => $"{selectedBook.Rating} / 5";
             set
             {
                 OnPropertyChanged();
             }
+        }
+
+        public Brush RatingColor
+        {
+            get => selectedBook.RatingColor;
         }
 
         public string BookPrize

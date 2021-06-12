@@ -11,16 +11,19 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
         <!-- Main screen of the book -->
-        <Image Source="{Binding BookImageSource}" Grid.Row="0" Grid.Column="0" Margin="20" />
+        <Image Source="{Binding BookImageSource}" Grid.Column="0" Margin="20" />
 
         <StackPanel Orientation="Vertical" Margin="20" Grid.Column="1">
-            <TextBlock Text="{Binding BookTitle}"/>
-            <TextBlock Text="{Binding BookAuthor}"/>
+            <TextBlock Margin="20" Foreground="Wheat" FontSize="20" Text="{Binding BookTitle}"/>
+            <TextBlock Margin="20" Foreground="Wheat" FontSize="20" Text="{Binding BookAuthor}"/>
+            <TextBlock Margin="20" Foreground="Wheat" FontSize="20" Text="{Binding BookUrl}" />
+
+            <TextBlock Margin="20" Foreground="{Binding RatingColor}" FontSize="25" Text="{Binding BookRating}"/>
+
+            <TextBlock Margin="20" Foreground="Wheat" FontSize="20" Text="{Binding BookPrize}" />
+            <TextBlock Margin="20" Foreground="Wheat" FontSize="20" Text="{Binding BookBuyDate}" />
         </StackPanel>
 
     </Grid>
