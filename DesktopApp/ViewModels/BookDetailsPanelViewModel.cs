@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Linq;
 using System.Windows.Media;
 
+
 namespace DesktopApp.ViewModels
 {
     public class BookDetailsPanelViewModel : INotifyPropertyChanged
@@ -66,7 +67,7 @@ namespace DesktopApp.ViewModels
 
         public string BookPrize
         {
-            get => $"{selectedBook.Prize/10} zł {selectedBook.Prize % 100} gr";
+            get => $"{Math.Floor(selectedBook.Prize/100)} zł {Math.Floor(selectedBook.Prize % 100)} gr";
             set
             {
                 OnPropertyChanged();
