@@ -49,3 +49,21 @@ jobs:
 
       - name: Build Release x64
         run: msbuild /p:Configuration=Release
+
+
+  tests:
+    name: Test the full project
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v1
+
+      - name: Restore all the packages
+        run: nuget restore Julianos.sln
+
+      - name: Run full tests
+        run: dotnet test
