@@ -1,4 +1,4 @@
-name: Hephaestus-CI
+name: Libris-CI
 
 on: [push]
 
