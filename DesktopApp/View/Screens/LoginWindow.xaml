@@ -38,7 +38,7 @@
                        FontSize="30" FontFamily="Impact"
                        Foreground="White"
                        VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Text="Julianos"/>
+                       Text="Libris"/>
             <Button Grid.Column="1"
                     Background="Transparent"
                     Width="15" Height="15"

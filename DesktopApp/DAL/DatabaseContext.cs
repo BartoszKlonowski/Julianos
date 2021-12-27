@@ -6,7 +6,7 @@ namespace DesktopApp.DAL
 {
     public class DatabaseContext : DbContext
     {
-        public DatabaseContext() : base( "JulianosDatabase" )
+        public DatabaseContext() : base( "LibrisDatabase" )
         {}
 
         public DbSet<UserModel> Users
