@@ -7,7 +7,7 @@
         <img src="https://img.shields.io/github/license/BartoszKlonowski/Libris?style=plastic" alt="Libris is released under the GNU GPL v3 license." />
     </a>
     <a href="https://github.com/BartoszKlonowski/Libris/actions/workflows/Libris-CI.yml">
-        <img src="https://img.shields.io/github/workflow/status/BartoszKlonowski/Libris/Libris-CI?label=Build&style=plastic" alt="Build status" />
+        <img src="https://img.shields.io/github/actions/workflow/status/BartoszKlonowski/Libris/Libris-CI.yml?label=Build&style=plastic" alt="Build status" />
     </a>
 </p>
 
